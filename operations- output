@@ -1,0 +1,14 @@
+print ("--You are now in the exam venue--")
+
+number_of_students = int(input ("\nEnter the amount of students to register: "))
+
+# Use the 'with open' method to open the text file in append method and contents stored 'as' new variable
+# For loop is used to iterate through the specified amount of students and each student's ID number is requested
+# The file is then written to, to be able to append each student onto the list
+
+with open ("reg_form.txt", 'a+') as file_register:
+    for num in range (0, number_of_students):
+        user_prompt= input("Enter the student ID number: ")
+        user_prompt += (f": Please sign in here with your name: ...................")
+        file_register.write(f"\nYour student ID number is: {user_prompt}\n")
+ 
