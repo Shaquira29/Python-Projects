@@ -1,0 +1,16 @@
+# Create variable to store how many rows are needed 
+# Using a for loop and an if-else statement to create a star pattern
+
+rows = 5
+
+# Rows is:  5 * 2 = 10 but in indexing the last number is not included so this = 9
+# For each loop which is less than or equal to 5, add a star by times the number in iteration  
+# Once the loop reaches iteration 6,7,8,9 it will apply the else statement
+# Asking Python to do the multiplication in brackets first minus the num in iteration to decrease stars
+
+for num in range (1, rows * 2 ):    
+    if num <= rows:                       
+        stars = "*" * num                
+    else:                   
+        stars = "*" * (rows *2 - num)      
+    print (stars)            
