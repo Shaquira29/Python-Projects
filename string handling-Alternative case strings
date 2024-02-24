@@ -1,0 +1,24 @@
+# Using a control structure to go through each letter to alternate between upper and lower case
+
+first_string = "This is a python program"
+alt_string= ""
+print("The first string is: " + (first_string))
+
+for i in range (0, len(first_string), 1):     # Starting with 0, throughout length of the string to iterate through each letter
+    if i % 2 == 0:
+        my_char = first_string[i].upper() 
+    else: 
+        my_char = first_string[i].lower()
+   
+    alt_string += my_char            # Using the empty string variable to add on each character to form a new string sentence
+
+print(f"The first string is now: {alt_string}")
+
+# Changing our first_string this to say " tHis IS a PYTHON program"   
+# Using the split() function to access each character to change to lower and upper alternating characters
+# Using list comprehension to go through each letter in the string to change to lower case and upper case.
+
+third_string = first_string.split()
+print(third_string)
+third_string = "".join ([my_char.lower() if i % 2 == 0 else my_char.upper() for i, my_char in enumerate(first_string)])
+print(third_string)
