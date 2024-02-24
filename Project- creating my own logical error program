@@ -1,0 +1,24 @@
+# Creating a logical error program
+
+lessons_amount = 20                         # The amount that the driving lessons cost
+user_driving_lessons = int(input("How many driving lessons did you take to pass?: "))
+
+# Calculating the expenses depending on how many lessons the user had
+total_spend = (lessons_amount * user_driving_lessons)  
+print (f" You spent a total of £ {total_spend} on your driving lessons!")
+
+if total_spend <= 380:
+    print ("You should be proud!")       # If total spend is less than or equal to amount print statements
+                                                          
+elif total_spend <=500:                               
+    print ("You finally got there!")            
+
+elif total_spend <= 160:
+    print("Speedy Gonzales, how did you do it?")
+
+elif total_spend == 360:
+    print ("Just like a circles degrees! ")
+
+# If user expenses fall outside of amounts else statement is printed
+else:
+    print("Wow that is alot of money! Time to get on the road!")        
