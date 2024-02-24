@@ -1,0 +1,30 @@
+# Creating a cafe menu and calculating the total stock for each item
+# Using list type for the menu and dictionaries to store it's stock and price values
+
+print ("Welcome to Yummy Cafe!")
+
+menu_items = ["Cheese Sandwich", "Crisp", "Ice lollies", "Cake" ]
+
+stock = {"Cheese Sandwich": 80, 
+         "Crisp" : 100, 
+         "Ice lollies": 50, 
+         "Cake": 200
+         }
+
+price = {"Cheese Sandwich": 3.0, 
+         "Crisp" : 1.0, 
+         "Ice lollies": 1.20, 
+         "Cake": 1.50
+         }
+
+# Using a for loop to go through each item and it's corresponding stock value and price to calculate its total
+
+item_stock = 0
+total_stock = 0
+
+for item in menu_items:
+    item_stock = (stock [item] * price [item])
+    print(f"The total stock worth of", item, "is £",item_stock )
+    total_stock += item_stock                  # Calculating total stock of all items combined
+
+print(f"The total stock worth of Yummy Cafe is:£",total_stock)
