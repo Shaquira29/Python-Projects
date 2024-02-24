@@ -1,0 +1,40 @@
+""""
+1. Design a programme that determines what award a person competing 
+in a triathlon will receive 
+2. Create a variable for each event
+3. Followed by asking the user to input their time for all 3 events 
+using integer for calculation
+4. Create a variable to store the total time by adding each variable event
+5. Create medal variable
+5. Create conditional struture to work out if a medal is awarded
+6. Return response to user based off the total time
+7. Programme complete 
+
+"""
+# Named variables to define the sport and ask the user to input times.
+
+user_swimming = int(input( "What was your swim time?"))
+user_cycling = int(input("What was your cycling time?"))
+user_running = int(input("what was your running time?"))
+
+# Created a variable to store the combined time of the individual sports
+
+total_time = int(user_swimming + user_cycling + user_running)
+print(total_time)
+
+# Create medal variable
+user_medal = ""
+
+# Used the control structure to see if award is given
+
+if total_time <=100:
+    user_medal = "You have won the Provincial Award!"
+elif total_time >=101 and total_time <=105:
+    user_medal = "You have won the Provincial Half Colours Award!"
+elif total_time >=106 and total_time <=110:
+    user_medal = "You have won the Provincial Scroll Award!"
+else:
+    user_medal = "Sorry, you have not won a medal today"
+    
+print(f"""You completed the race in: {total_time} minutes
+       {user_medal}""")
