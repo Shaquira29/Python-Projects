@@ -1,0 +1,23 @@
+#  Create 2 variables to store total and number count
+#  Use a while loop and request for the user to enter a number
+#  While True allows for the statement to continue until user enters - 1
+
+total = 0
+num = 0
+
+
+while True:
+    user_number = float(input("please enter a number: "))
+
+    if user_number == -1:           # If the entered number is equal to -1 terminate the loop 
+        break 
+
+    number = float(user_number)    # The number can be displayed as a float
+    total += number    
+
+    num += 1                       
+
+if num > 0:                    
+    average = total / num        # The average is calculated by taking the total divided by the number previously entered                     
+    print (f"The average of entered numbers is :", average)
+
