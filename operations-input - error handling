@@ -1,0 +1,22 @@
+# Using error handling try, except block to catch any errors when trying to open file
+# Opening the file using 'with open' method  which allows the file to automatically close
+# Using the readlines method to return the data in as a list of strings to manipulate
+
+try: 
+    with open ("DOB.txt", "r") as file: 
+     content_lines = file.readlines()
+    print ("\nName")                     # Print statement for the header
+    for lines in content_lines:
+        content = lines.split()          # Use the split and join indexing method to separate the names
+        content = " ".join(content[0:2])
+        print (content)
+    else:
+        print ("\nBirthdate")           # Print statement for the header
+    for lines in content_lines:
+        content = lines.split()        # Use the split and join indexing method to separate the birthdates                   
+        content = " ". join (content[2:5])
+        print(content)
+except FileNotFoundError:
+   print ("Sorry file not found")
+except Exception as e:
+   print(f" An unepected error has occurred: {e}")
