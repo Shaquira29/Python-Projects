@@ -1,0 +1,85 @@
+print("Welcome to Smooth Airlines\n")
+
+# Defined 3 separate functions to take in the costs for each element
+
+def hotel_cost(num_nights):
+    return num_nights * 450        
+
+def plane_cost(city_flight):
+    if city_flight == 1:
+        return  700
+    elif city_flight == 2:
+        return 500
+    elif city_flight == 3:
+        return 400
+    else:
+        return 0
+ 
+
+def car_rental(rental_days):
+    return rental_days *150
+
+ # Store the variable, call each function and variable is stored as parameter
+
+def holiday_cost(num_nights, city_flight, rental_days):
+    num_nights = hotel_cost(num_nights)        
+    city_flight = plane_cost(city_flight)
+    rental_days = car_rental(rental_days)
+
+    return num_nights + city_flight + rental_days
+   
+   
+
+city_flight_options = ["1. London Gatwick Airport", 
+             "2. Paris Airport", 
+             "3. Amsterdam Airport"
+                        ]
+
+# Use a while true loop and try except block for error handling if user does not enter integer
+
+while True:
+ try:
+    city_flight = int(input(f""""Which city would you like to travel to?\n
+{city_flight_options}\n
+Please select either 1, 2 or 3 from the above options:
+"""))
+    
+    if city_flight == 1:
+         Destination = "London Gatwick Airport"
+    elif city_flight == 2:
+         Destination = "Paris Airport"
+    elif city_flight == 3:
+        Destination = "Amsterdam Airport"
+    else:
+        raise ValueError("Please enter correct number.")
+    break
+ except ValueError as e:                                    
+     print("You have not selected a number")
+
+while True:
+ try:
+    num_nights = int(input("How many nights will you be staying?:")) 
+    break
+ except ValueError as e:
+    print("You have not selected a number")
+
+while True:     
+ try:
+    rental_days = int(input("How many days will you hire a car for?:"))
+    break
+ except ValueError as e:
+    print("You have not selected a number")
+
+total_expediture = holiday_cost (num_nights, city_flight, rental_days)  # calculate total spend for trip
+
+print(f"""\nYou have chosen to fly to: {Destination}.
+       Your stay will be for {num_nights} night/s. 
+  Your car hire will be for {rental_days} day/s.
+   """)
+
+print(f""" The breakdown of your trip expenses to {Destination} is as follows; 
+       The total amount for your trip is £{total_expediture}.
+       The plane cost for {num_nights} nights is £{plane_cost(city_flight)}.
+       The hotel cost for {num_nights} nights is £{hotel_cost(num_nights)}.
+       The car hire cost for {num_nights} nights is £{car_rental(rental_days)}.
+       """)
