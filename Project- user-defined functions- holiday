@@ -3,9 +3,11 @@ print("Welcome to Smooth Airlines\n")
 # Defined 3 separate functions to take in the costs for each element
 
 def hotel_cost(num_nights):
+    '''Takes in the number of nights multiplied by hotel cost'''
     return num_nights * 450        
 
 def plane_cost(city_flight):
+    '''Takes in the city flight option and returns the total cost for the flight'''
     if city_flight == 1:
         return  700
     elif city_flight == 2:
@@ -17,11 +19,13 @@ def plane_cost(city_flight):
  
 
 def car_rental(rental_days):
+    '''Takes in the number of car rental days required, returns multiplying by cost'''
     return rental_days *150
 
  # Store the variable, call each function and variable is stored as parameter
 
 def holiday_cost(num_nights, city_flight, rental_days):
+    '''Takes in all three parameters, returns total combined expenses'''
     num_nights = hotel_cost(num_nights)        
     city_flight = plane_cost(city_flight)
     rental_days = car_rental(rental_days)
